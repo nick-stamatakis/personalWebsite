@@ -62,12 +62,12 @@ export default function Home(): JSX.Element {
                         </section>
 
                         {/* Education Section */}
-                        <section className="mb-8">
+                        <section className="mb-8 text-gray-700">
                             <h2 className="text-2xl font-bold mb-4 text-blue-600">Education</h2>
                             <p className="font-semibold">Stony Brook University</p>
                             <p>B.S. in Computer Science and Applied Mathematics &amp; Statistics</p>
                             <p>Expected Graduation: May 2026</p>
-                            <p>GPA: 3.84, Honors College</p>
+                            <p>GPA: 3.86, Honors College</p>
                         </section>
 
                         {/* Skills Section */}
