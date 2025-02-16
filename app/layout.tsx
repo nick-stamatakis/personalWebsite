@@ -23,7 +23,7 @@ export default function RootLayout({
       <div className="flex flex-col md:flex-row min-h-screen">
         <aside className="w-full md:w-1/4 bg-blue-600 p-8 text-center">
           <Image
-              src="https://nick-stamatakis.github.io/personalWebsite/nick-headshot.jpg"
+              src="./nick-headshot.jpg"
               alt="Nick Stamatakis"
               width={200}
               height={200}
