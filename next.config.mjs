@@ -1,10 +1,4 @@
-const isProd = process.env.NODE_ENV === 'production';
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
 
-export default {
-    output: 'export',
-    basePath: isProd ? '/personalWebsite' : '',
-    assetPrefix: isProd ? '/personalWebsite/' : '',
-    images: {
-        unoptimized: true, // Required for static export to GitHub Pages
-    },
-};
+export default nextConfig;
