@@ -46,7 +46,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 // Main Home page component
 export default function Home(): JSX.Element {
     return (
-        <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+        <main className="flex flex-col items.txt-center justify-center min-h-screen bg-gray-100 p-6">
             <div className="max-w-6xl w-full bg-white shadow-lg rounded-lg overflow-hidden">
                 <div className="md:flex">
                     <div className="md:w-2/3 p-8">
