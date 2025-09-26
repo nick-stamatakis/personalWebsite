@@ -143,7 +143,7 @@ export default function Home() {
             title: "Software Development Engineer Intern",
             company: "Amazon.com, Inc.",
             date: "May 2025 - August 2025",
-            logo: "/Amazon_logo.svg",
+            logo: "./Amazon_logo.svg",
             descriptions: [
                 "Designed a serverless web-scraping pipeline with Scrapy on AWS Lambda, expanding coverage by ~27×.",
                 "Integrated Claude 3.7 Sonnet via AWS Bedrock for NLP, yielding 95.35% accuracy on backtested datasets.",
@@ -156,7 +156,7 @@ export default function Home() {
             title: "Software Engineer Intern",
             company: "West Palm Test Prep",
             date: "October 2023 – April 2025",
-            logo: "/whiz-logo.png",
+            logo: "./whiz-logo.png",
             link: "https://www.whiz.study",
             descriptions: [
                 "Launched a full-stack exam prep platform https://www.whiz.study with 60,000+ users using Next.js/Vercel.",
@@ -169,7 +169,7 @@ export default function Home() {
             title: "Software Engineer Intern",
             company: "Zebra Technologies",
             date: "May 2024 – August 2024",
-            logo: "/zebra-technologies-logo.svg",
+            logo: "./zebra-technologies-logo.svg",
             descriptions: [
                 "Engineered sentiment analysis system using Large Language Models, processing 200+ monthly feedback entries.",
                 "Implemented semantic search over 8K+ JIRA tickets using Retrieval-Augmented Generation (RAG).",
@@ -292,7 +292,7 @@ export default function Home() {
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
                 <Image
-                  src="/nick-headshot.jpg"
+                  src="./nick-headshot.jpg"
                   alt="Nicholas Stamatakis"
                   width={300}
                   height={300}
