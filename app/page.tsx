@@ -251,7 +251,7 @@ export default function Home() {
               </div>
 
               <p className="text-xl lg:text-2xl text-slate-600 mb-12 leading-relaxed animate-fade-in-up">
-                I'm a senior at Stony Brook University Honors College (CS + Applied Math & Stats, GPA 3.85) with experience at Amazon, Zebra Technologies, and West Palm Test Prep. My work spans scalable systems, AI/ML, and full-stack development — from building a scalable web-scraping pipeline at Amazon to creating an AI tutor at Whiz.study used by 50K+ students. I'm passionate about designing intelligent systems, optimizing infrastructure, and applying machine learning to real-world problems.
+                I&apos;m a senior at Stony Brook University Honors College (CS + Applied Math & Stats, GPA 3.85) with experience at Amazon, Zebra Technologies, and West Palm Test Prep. My work spans scalable systems, AI/ML, and full-stack development — from building a scalable web-scraping pipeline at Amazon to creating an AI tutor at Whiz.study used by 50K+ students. I&apos;m passionate about designing intelligent systems, optimizing infrastructure, and applying machine learning to real-world problems.
               </p>
 
               {/* Contact Info */}
@@ -347,7 +347,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-800 mb-2">Academic Performance</h4>
-                  <p className="text-slate-600">GPA: 3.85 • Dean's List • Academic Achievement Award</p>
+                  <p className="text-slate-600">GPA: 3.85 • Dean&apos;s List • Academic Achievement Award</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-800 mb-2">Leadership</h4>
