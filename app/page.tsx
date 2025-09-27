@@ -391,9 +391,9 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-3xl p-8 border border-violet-200 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
-              <h3 className="text-xl font-bold text-slate-800 mb-6 group-hover:text-violet-700 transition-colors duration-300">Technologies</h3>
+              <h3 className="text-xl font-bold text-slate-800 mb-6 group-hover:text-violet-700 transition-colors duration-300">Frameworks/Tools</h3>
               <div className="flex flex-wrap gap-3">
-                {['AWS', 'Next.js', 'React.js', 'Node.js', 'PostgreSQL', 'MongoDB', 'Docker', 'TensorFlow', 'PyTorch', 'OpenCV'].map((skill, index) => (
+                {['AWS (Lambda, Bedrock, CDK, S3, CloudWatch, Step Functions, SQS)', 'Scrapy', 'Next.js', 'Tailwind CSS', 'Shadcn', 'Prisma ORM', 'PostgreSQL', 'PgAdmin', 'OpenAI API', 'Vercel AI SDK', 'React.js', 'Express.js', 'Node.js', 'Kafka', 'MongoDB', 'Qdrant', 'HuggingFace', 'FAST API', 'REST APIs', 'OpenCV', 'PIL', 'TensorFlow', 'NumPy', 'Sklearn', 'Pandas', 'Git', 'Docker', 'Linear'].map((skill, index) => (
                   <span key={index} className="bg-white text-slate-700 px-4 py-2 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-violet-200 hover:border-violet-300">
                     {skill}
                   </span>
