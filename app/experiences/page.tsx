@@ -39,7 +39,7 @@ export default function Experiences() {
         },
         {
             title: "Software Engineer Intern",
-            company: "West Palm Test Prep",
+            company: "whiz.study",
             date: "October 2023 – April 2025",
             descriptions: [
                 "Launched a full-stack exam prep platform https://www.whiz.study with 60,000+ users using Next.js/Vercel.",

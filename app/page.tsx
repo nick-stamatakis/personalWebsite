@@ -143,7 +143,7 @@ export default function Home() {
             title: "Software Development Engineer Intern",
             company: "Amazon.com, Inc.",
             date: "May 2025 - August 2025",
-            logo: "./Amazon_logo.svg",
+            logo: "/Amazon_logo.svg",
             descriptions: [
                 "Designed a serverless web-scraping pipeline with Scrapy on AWS Lambda, expanding coverage by ~27×.",
                 "Integrated Claude 3.7 Sonnet via AWS Bedrock for NLP, yielding 95.35% accuracy on backtested datasets.",
@@ -154,9 +154,9 @@ export default function Home() {
         },
         {
             title: "Software Engineer Intern",
-            company: "West Palm Test Prep",
+            company: "whiz.study",
             date: "October 2023 – April 2025",
-            logo: "./whiz-logo.png",
+            logo: "/whiz-logo.png",
             link: "https://www.whiz.study",
             descriptions: [
                 "Launched a full-stack exam prep platform https://www.whiz.study with 60,000+ users using Next.js/Vercel.",
@@ -169,7 +169,7 @@ export default function Home() {
             title: "Software Engineer Intern",
             company: "Zebra Technologies",
             date: "May 2024 – August 2024",
-            logo: "./zebra-technologies-logo.svg",
+            logo: "/zebra-technologies-logo.svg",
             descriptions: [
                 "Engineered sentiment analysis system using Large Language Models, processing 200+ monthly feedback entries.",
                 "Implemented semantic search over 8K+ JIRA tickets using Retrieval-Augmented Generation (RAG).",
@@ -251,7 +251,7 @@ export default function Home() {
               </div>
 
               <p className="text-xl lg:text-2xl text-slate-600 mb-12 leading-relaxed animate-fade-in-up">
-                I&apos;m a senior at Stony Brook University Honors College (CS + Applied Math & Stats, GPA 3.85) with experience at Amazon, Zebra Technologies, and West Palm Test Prep. My work spans scalable systems, AI/ML, and full-stack development — from building a scalable web-scraping pipeline at Amazon to creating an AI tutor at Whiz.study used by 50K+ students. I&apos;m passionate about designing intelligent systems, optimizing infrastructure, and applying machine learning to real-world problems.
+                I&apos;m a senior at Stony Brook University Honors College (CS + Applied Math & Stats, GPA 3.85) with experience at Amazon, Zebra Technologies, and whiz.study. My work spans scalable systems, AI/ML, and full-stack development — from building a scalable web-scraping pipeline at Amazon to creating an AI tutor at whiz.study used by 50K+ students. I&apos;m passionate about designing intelligent systems, optimizing infrastructure, and applying machine learning to real-world problems.
               </p>
 
               {/* Contact Info */}
@@ -292,7 +292,7 @@ export default function Home() {
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
                 <Image
-                  src="./nick-headshot.jpg"
+                  src="/nick-headshot.jpg"
                   alt="Nicholas Stamatakis"
                   width={300}
                   height={300}

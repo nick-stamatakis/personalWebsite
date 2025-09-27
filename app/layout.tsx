@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Nick Stamatakis - Software Engineer Portfolio",
-  description: "Portfolio website of Nick Stamatakis, Software Engineer with experience at Amazon, Zebra Technologies, and West Palm Test Prep. Published researcher in adversarial machine learning.",
+  description: "Portfolio website of Nick Stamatakis, Software Engineer with experience at Amazon, Zebra Technologies, and whiz.study. Published researcher in adversarial machine learning.",
 };
 
 export default function RootLayout({
