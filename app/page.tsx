@@ -251,7 +251,7 @@ export default function Home() {
               </div>
 
               <p className="text-xl lg:text-2xl text-slate-600 mb-12 leading-relaxed animate-fade-in-up">
-                I&apos;m a senior at Stony Brook University Honors College (CS + Applied Math & Stats, GPA 3.85) with experience at <span className="font-bold text-indigo-600">Amazon</span>, Zebra Technologies, and <span className="font-bold text-emerald-600">whiz.study</span>. My work spans scalable systems, AI/ML, and full-stack development — from building a scalable web-scraping pipeline at Amazon to creating an AI tutor at <span className="font-bold text-emerald-600">whiz.study</span> used by <span className="font-bold text-purple-600">60K+ students</span>. I&apos;m passionate about designing intelligent systems, optimizing infrastructure, and applying machine learning to real-world problems.
+                I&apos;m a senior at Stony Brook University Honors College (CS + Applied Math & Stats, GPA 3.85) with experience at <span className="font-bold text-indigo-600">Amazon</span>, Zebra Technologies, and <span className="font-bold text-indigo-600">whiz.study</span>. My work spans scalable systems, AI/ML, and full-stack development — from building a scalable web-scraping pipeline at Amazon to creating an AI tutor at whiz.study used by <span className="font-bold text-purple-600">60K+ students</span>. I&apos;m passionate about designing intelligent systems, optimizing infrastructure, and applying machine learning to real-world problems.
               </p>
 
               {/* Contact Info */}
