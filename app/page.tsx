@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Github, Linkedin, Mail, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight, FileDown } from "lucide-react";
 
 import { Section } from "@/components/section";
 import { ExperienceCard } from "@/components/experience-card";
@@ -41,14 +41,14 @@ export default function Home() {
         {/* ---------------------------------------------------------------- */}
         {/* Header — impact-first                                           */}
         {/* ---------------------------------------------------------------- */}
-        <header className="flex flex-col sm:flex-row items-start gap-5 mb-6">
+        <header className="flex flex-col sm:flex-row items-start gap-6 mb-6">
           <div className="flex-shrink-0">
             <Image
               src={personal.headshot}
               alt={personal.name}
-              width={96}
-              height={96}
-              className="rounded-full"
+              width={160}
+              height={160}
+              className="rounded-full ring-1 ring-neutral-200 shadow-sm w-28 h-28 sm:w-40 sm:h-40"
               priority
             />
           </div>
@@ -90,6 +90,16 @@ export default function Home() {
               >
                 <Linkedin size={17} />
               </a>
+              <a
+                href={personal.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+                aria-label="Download Resume"
+              >
+                <FileDown size={15} />
+                Resume
+              </a>
             </div>
           </div>
         </header>
@@ -116,7 +126,7 @@ export default function Home() {
         {/* Skills                                                           */}
         {/* ---------------------------------------------------------------- */}
         <Section id="skills" title="Skills">
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
             {skills.map((category) => (
               <div key={category.label}>
                 <h3 className="text-sm font-medium text-neutral-700 mb-1.5">
@@ -141,25 +151,42 @@ export default function Home() {
         {/* Education                                                        */}
         {/* ---------------------------------------------------------------- */}
         <Section id="education" title="Education">
-          <div className="py-1">
-            <h3 className="text-base font-semibold text-neutral-900">
-              {education.school}
-            </h3>
-            <p className="text-sm text-neutral-600 mt-1">{education.degree}</p>
-            <div className="flex items-center gap-2 mt-1">
-              <span className="text-sm text-neutral-500">{education.graduation}</span>
-              <span className="text-neutral-300">/</span>
-              <span className="text-sm text-neutral-500">GPA: {education.gpa}</span>
+          <div className="grid gap-3 sm:grid-cols-[160px_1fr] py-1">
+            {/* Left column: logo */}
+            <div className="flex flex-col gap-3">
+              <span className="text-sm text-neutral-500 tracking-wide">{education.graduation}</span>
+              {education.logo && (
+                <div className="w-16 h-16 relative flex items-center justify-center">
+                  <Image
+                    src={education.logo}
+                    alt={`${education.school} logo`}
+                    width={64}
+                    height={64}
+                    className="object-contain max-w-full max-h-full"
+                  />
+                </div>
+              )}
             </div>
-            <div className="flex flex-wrap gap-2 mt-3">
-              {education.highlights.map((h) => (
-                <span
-                  key={h}
-                  className="text-xs text-neutral-500 border border-neutral-200 rounded px-2 py-0.5"
-                >
-                  {h}
-                </span>
-              ))}
+
+            {/* Right column: details */}
+            <div>
+              <h3 className="text-base font-semibold text-neutral-900">
+                {education.school}
+              </h3>
+              <p className="text-sm text-neutral-600 mt-1">{education.degree}</p>
+              <div className="flex items-center gap-2 mt-1">
+                <span className="text-sm text-neutral-500">GPA: {education.gpa}</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-3">
+                {education.highlights.map((h) => (
+                  <span
+                    key={h}
+                    className="text-xs text-neutral-500 border border-neutral-200 rounded px-2 py-0.5"
+                  >
+                    {h}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </Section>

@@ -4,18 +4,18 @@ import type { Experience } from "@/lib/data";
 
 export function ExperienceCard({ experience }: { experience: Experience }) {
   return (
-    <article className="group relative grid gap-3 sm:grid-cols-[160px_1fr] py-4 first:pt-0 last:pb-0 border-b border-neutral-200 last:border-0">
+    <article className="group relative grid gap-3 sm:grid-cols-[160px_1fr] py-4 first:pt-0 last:pb-0 border-b border-neutral-200 last:border-0 rounded-lg -mx-3 px-3 transition-colors hover:bg-neutral-50/60">
       {/* Left column: date + logo */}
       <div className="flex flex-col gap-3">
         <time className="text-sm text-neutral-500 tracking-wide">{experience.date}</time>
         {experience.logo && (
-          <div className="w-20 h-20 relative">
+          <div className="w-16 h-16 relative flex items-center justify-center">
             <Image
               src={experience.logo}
               alt={`${experience.company} logo`}
-              width={80}
-              height={80}
-              className="object-contain w-full h-full"
+              width={64}
+              height={64}
+              className="object-contain max-w-full max-h-full"
             />
           </div>
         )}

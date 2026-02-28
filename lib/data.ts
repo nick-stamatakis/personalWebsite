@@ -41,8 +41,9 @@ export const personal = {
   github: "https://github.com/nick-stamatakis",
   linkedin: "https://linkedin.com/in/nicholas-stamatakis",
   headshot: asset("/nick-headshot.jpg"),
+  resume: asset("/NicholasStamatakisResume.pdf"),
   headline: "Full-stack engineer who ships products people use.",
-  bio: `Built an AI tutoring platform serving 75,000+ users. Designed serverless data pipelines at Amazon. Published researcher in adversarial machine learning. CS & Applied Math at Stony Brook University.`,
+  bio: `Built a full-stack exam prep platform serving 75,000+ users. Designed serverless data pipelines at Amazon. Published at ACM CCS 2025 in adversarial machine learning. CS & Applied Math at Stony Brook University.`,
 };
 
 // ---------------------------------------------------------------------------
@@ -53,9 +54,10 @@ export const education = {
   school: "Stony Brook University Honors College",
   location: "Stony Brook, NY",
   degree:
-    "B.S. in Computer Science and Applied Mathematics & Statistics",
-  graduation: "Expected Graduation: May 2026",
+    "B.S. in Computer Science and Applied Mathematics & Statistics, Specialization in Artificial Intelligence and Machine Learning",
+  graduation: "Aug 2022 – May 2026",
   gpa: "3.85",
+  logo: asset("/sbu.jpg"),
   highlights: [
     "Founder & VP of Web Development Club",
     "Dean's List",
@@ -76,10 +78,10 @@ export const experiences: Experience[] = [
     logo: asset("/Amazon_logo.svg"),
     headline: "Serverless data pipeline expanding coverage 27× with 95% ML accuracy.",
     descriptions: [
-      "Designed a serverless web-scraping pipeline with Scrapy on AWS Lambda, expanding data coverage by ~27×.",
-      "Integrated Claude 3.7 Sonnet via AWS Bedrock for NLP, achieving 95.35% accuracy on backtested datasets.",
-      "Automated infrastructure with AWS CDK, managing 100K+ JSON files in S3.",
-      "Orchestrated Step Function state machines with integration tests for end-to-end CI/CD.",
+      "Designed a serverless web-scraping pipeline with Scrapy on AWS Lambda, expanding coverage by ~27×.",
+      "Integrated Claude 3.7 Sonnet via AWS Bedrock for NLP, yielding 95.35% accuracy on backtested datasets.",
+      "Automated infrastructure deployment with AWS CDK, managing 100K+ JSON files in S3.",
+      "Orchestrated a Step Function state machine with integration tests to validate the end-to-end CI/CD pipeline.",
       "Instrumented 10+ CloudWatch dashboards monitoring program health and error metrics.",
     ],
     technologies: ["AWS Lambda", "AWS CDK", "Scrapy", "AWS Bedrock", "S3", "Step Functions", "CloudWatch"],
@@ -94,12 +96,11 @@ export const experiences: Experience[] = [
     linkLabel: "whiz.study",
     headline: "AI exam prep platform with 75,000+ users.",
     descriptions: [
-      "Launched whiz.study end-to-end with Next.js, TypeScript, and Tailwind CSS on Vercel.",
-      "Designed an AI tutor using WebSockets for real-time image processing with OpenAI's API, boosting student accuracy by 40%.",
-      "Architected a 350-parameter PostgreSQL schema with Prisma ORM on Supabase.",
-      "Raised user satisfaction 75% through modern UI design with shadcn/ui.",
+      "Launched whiz.study, a full-stack preparation platform serving 75,000+ users using a TurboRepo monorepo with Next.js, Expo (React Native), and Express across 6 apps with a 93-model PostgreSQL schema via Prisma ORM.",
+      "Built an agentic AI tutor using Vercel AI SDK, OpenRouter, and a Bun WebSocket server.",
+      "Engineered an adaptive study plan engine (\"Road to 1600\") that builds personalized lesson sequences using topological sorting, all as pure functions with 1,000+ automated tests.",
     ],
-    technologies: ["TypeScript", "Next.js", "Tailwind CSS", "OpenAI API", "WebSockets", "PostgreSQL", "Prisma", "Supabase"],
+    technologies: ["TypeScript", "Next.js", "React Native", "Express", "TurboRepo", "Vercel AI SDK", "PostgreSQL", "Prisma", "Bun"],
   },
   {
     title: "Software Engineer Intern",
@@ -108,9 +109,9 @@ export const experiences: Experience[] = [
     date: "May 2024 – Aug 2024",
     logo: asset("/zebra-technologies-logo.svg"),
     descriptions: [
-      "Engineered sentiment analysis system with LLMs, processing 200+ monthly feedback entries.",
-      "Implemented semantic search over 8K+ JIRA tickets using RAG.",
-      "Optimized Qdrant Vector DB, reducing data retrieval time 70% across 20K entries.",
+      "Engineered sentiment analysis system using Large Language Models, processing 200+ monthly feedback entries.",
+      "Implemented semantic search over 8K+ JIRA tickets using Retrieval-Augmented Generation (RAG).",
+      "Optimized a Qdrant Vector DB for efficient storage of System Problem Reports; reduced data retrieval time by 70% and enhanced report generation for 20,000 performance entries.",
     ],
   },
   {
@@ -121,12 +122,12 @@ export const experiences: Experience[] = [
     logo: asset("/uconn.jpg"),
     publicationLink: "https://arxiv.org/abs/2506.14582",
     publicationTitle: "Busting the Ballot with Commodity Printers: Voting Meets Adversarial Machine Learning",
-    publicationVenue: "ACM CCS '25",
+    publicationVenue: "ACM CCS 2025",
     headline: "Published research: auditing 10,000 ballots with 99.5% accuracy.",
     descriptions: [
-      "Designed a support vector machine to audit ballots for Connecticut state elections with 99.5% validation accuracy.",
-      "Implemented adversarial attacks reaching 98% detection rate for adversarial examples.",
-      "Built image registration software with OpenCV, aligning 10,000 printed/scanned ballots and reducing manual verification by 85%.",
+      "Designed a support vector machine to audit 10,000 ballots for the state of Connecticut, achieving 99.5% validation accuracy.",
+      "Implemented adversarial machine learning techniques to perform attacks on the model, reaching a detection rate of 98% for adversarial examples.",
+      "Constructed advanced image registration software using Python and OpenCV; aligned 10,000 printed and scanned ballots, improving accuracy and reducing manual verification time by 85%.",
     ],
     technologies: ["Python", "PyTorch", "TensorFlow", "OpenCV", "HuggingFace"],
   },
@@ -137,8 +138,7 @@ export const experiences: Experience[] = [
     date: "Aug 2023 – May 2024",
     logo: asset("/sbu.jpg"),
     descriptions: [
-      "Created 50+ practice problems, led exam reviews, and proctored for 200+ students.",
-      "Led weekly 1-hour recitations, boosting comprehension and engagement.",
+      "Created 50+ practice problems, led exam reviews, and proctored for 200+ students. Led weekly 1-hour recitations.",
     ],
   },
 ];
@@ -152,7 +152,7 @@ export const publications = [
     title:
       "Busting the Ballot with Commodity Printers: Voting Meets Adversarial Machine Learning",
     url: "https://arxiv.org/abs/2506.14582",
-    venue: "ACM CCS '25",
+    venue: "ACM CCS 2025",
   },
 ];
 
@@ -162,7 +162,7 @@ export const publications = [
 
 export const skills: SkillCategory[] = [
   {
-    label: "Languages",
+    label: "Programming",
     items: [
       "Python",
       "TypeScript",
@@ -170,40 +170,63 @@ export const skills: SkillCategory[] = [
       "JavaScript",
       "C",
       "SQL",
-      "OCaML",
+      "OCaml",
       "HTML",
       "CSS",
     ],
   },
   {
-    label: "Frameworks & Tools",
+    label: "Cloud & DevOps",
     items: [
-      "AWS (Lambda, Bedrock, CDK, S3, CloudWatch, Step Functions, SQS)",
-      "Scrapy",
+      "AWS Lambda",
+      "AWS Bedrock",
+      "AWS CDK",
+      "S3",
+      "Step Functions",
+      "SQS",
+      "CloudWatch",
+      "Docker",
+      "Git",
+      "CI/CD",
+      "Linear",
+    ],
+  },
+  {
+    label: "Web Frameworks",
+    items: [
       "Next.js",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Prisma ORM",
-      "PostgreSQL",
-      "OpenAI API",
-      "Vercel AI SDK",
       "React.js",
       "Express.js",
       "Node.js",
-      "Kafka",
+      "FastAPI",
+      "Tailwind CSS",
+      "Shadcn",
+      "REST APIs",
+    ],
+  },
+  {
+    label: "Databases & Data",
+    items: [
+      "PostgreSQL",
       "MongoDB",
       "Qdrant",
+      "Kafka",
+      "Prisma ORM",
+      "Scrapy",
+    ],
+  },
+  {
+    label: "AI & ML",
+    items: [
+      "OpenAI API",
+      "Vercel AI SDK",
+      "RAG",
       "HuggingFace",
-      "FastAPI",
-      "REST APIs",
-      "OpenCV",
       "TensorFlow",
       "NumPy",
       "Sklearn",
       "Pandas",
-      "Git",
-      "Docker",
-      "Linear",
+      "OpenCV",
     ],
   },
 ];
