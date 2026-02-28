@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# editor/tooling config
+.cursor/
+.loop-flow/
+.mcp.json
+opencode.json
