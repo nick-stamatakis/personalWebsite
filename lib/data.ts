@@ -3,6 +3,9 @@
 // Update this file when your resume changes.
 // ============================================================================
 
+import { asset } from "./utils";
+
+
 export interface Experience {
   title: string;
   company: string;
@@ -39,7 +42,7 @@ export const personal = {
   location: "Deer Park, NY",
   github: "https://github.com/nick-stamatakis",
   linkedin: "https://linkedin.com/in/nicholas-stamatakis",
-  headshot: "/nick-headshot.jpg",
+  headshot: asset("/nick-headshot.jpg"),
   bio: `Senior at Stony Brook University Honors College studying Computer Science and Applied Mathematics & Statistics. Experience building scalable systems at Amazon, AI/ML tools at Zebra Technologies, and full-stack products at West Palm Test Prep. Published researcher in adversarial machine learning.`,
 };
 
@@ -71,7 +74,7 @@ export const experiences: Experience[] = [
     company: "Amazon.com, Inc.",
     location: "New York, NY",
     date: "May 2025 \u2013 August 2025",
-    logo: "/Amazon_logo.svg",
+    logo: asset("/Amazon_logo.svg"),
     descriptions: [
       "Designed a serverless web-scraping pipeline with Scrapy on AWS Lambda, expanding coverage by ~27\u00d7.",
       "Integrated Claude 3.7 Sonnet via AWS Bedrock for NLP, yielding 95.35% accuracy on backtested datasets.",
@@ -85,7 +88,7 @@ export const experiences: Experience[] = [
     company: "West Palm Test Prep",
     location: "West Palm Beach, FL",
     date: "October 2023 \u2013 April 2025",
-    logo: "/whiz-logo.png",
+    logo: asset("/whiz-logo.png"),
     link: "https://www.whiz.study",
     descriptions: [
       "Launched a full-stack exam prep platform whiz.study with 50,000+ users using Next.js/Vercel.",
@@ -99,7 +102,7 @@ export const experiences: Experience[] = [
     company: "Zebra Technologies",
     location: "Holtsville, NY",
     date: "May 2024 \u2013 August 2024",
-    logo: "/zebra-technologies-logo.svg",
+    logo: asset("/zebra-technologies-logo.svg"),
     descriptions: [
       "Engineered sentiment analysis system using Large Language Models, processing 200+ monthly feedback entries.",
       "Implemented semantic search over 8K+ JIRA tickets using Retrieval-Augmented Generation (RAG).",
@@ -111,7 +114,7 @@ export const experiences: Experience[] = [
     company: "Stony Brook University",
     location: "Stony Brook, NY",
     date: "August 2023 \u2013 May 2024",
-    logo: "/sbu.jpg",
+    logo: asset("/sbu.jpg"),
     descriptions: [
       "Created 50+ practice problems, led exam reviews, and proctored for 200+ students.",
       "Led weekly 1-hour recitations, boosting comprehension and engagement.",
@@ -122,7 +125,7 @@ export const experiences: Experience[] = [
     company: "University of Connecticut",
     location: "Storrs, CT",
     date: "May 2023 \u2013 October 2023",
-    logo: "/uconn.jpg",
+    logo: asset("/uconn.jpg"),
     isResearch: true,
     publicationLink: "https://arxiv.org/abs/2506.14582",
     descriptions: [
