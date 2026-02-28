@@ -1,18 +1,15 @@
 import Image from "next/image";
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight } from "lucide-react";
 
 import { Section } from "@/components/section";
 import { ExperienceCard } from "@/components/experience-card";
-import { ProjectCard } from "@/components/project-card";
 
 import {
   personal,
   education,
   experiences,
-  publications,
-  projects,
+
   skills,
-  extracurriculars,
 } from "@/lib/data";
 
 // ============================================================================
@@ -42,7 +39,7 @@ export default function Home() {
 
       <div className="max-w-5xl mx-auto px-6 py-8 animate-fade-up">
         {/* ---------------------------------------------------------------- */}
-        {/* Header                                                           */}
+        {/* Header — impact-first                                           */}
         {/* ---------------------------------------------------------------- */}
         <header className="flex flex-col sm:flex-row items-start gap-5 mb-6">
           <div className="flex-shrink-0">
@@ -60,6 +57,9 @@ export default function Home() {
             <h1 className="font-serif text-3xl sm:text-4xl font-bold text-neutral-900 tracking-tight">
               {personal.name}
             </h1>
+            <p className="mt-1 text-base font-medium text-neutral-700">
+              {personal.headline}
+            </p>
             <p className="mt-2 text-sm text-neutral-600 leading-relaxed">
               {personal.bio}
             </p>
@@ -68,10 +68,9 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-4 mt-3">
               <a
                 href={`mailto:${personal.email}`}
-                className="text-neutral-400 hover:text-neutral-900 transition-colors"
-                aria-label="Email"
+                className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
               >
-                <Mail size={17} />
+                {personal.email}
               </a>
               <a
                 href={personal.github}
@@ -97,20 +96,43 @@ export default function Home() {
 
         {/* In-page navigation */}
         <nav className="flex flex-wrap gap-5 mb-6 pb-3 border-b border-neutral-200">
-          <NavLink href="#experience">Experience</NavLink>
-          <NavLink href="#education">Education</NavLink>
-          <NavLink href="#publications">Publications</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
+          <NavLink href="#work">Work</NavLink>
           <NavLink href="#skills">Skills</NavLink>
+          <NavLink href="#education">Education</NavLink>
         </nav>
 
         {/* ---------------------------------------------------------------- */}
-        {/* Experience                                                       */}
+        {/* Work — single unified section                                   */}
         {/* ---------------------------------------------------------------- */}
-        <Section id="experience" title="Experience">
+        <Section id="work" title="Work">
           <div>
             {experiences.map((exp, i) => (
               <ExperienceCard key={i} experience={exp} />
+            ))}
+          </div>
+        </Section>
+
+        {/* ---------------------------------------------------------------- */}
+        {/* Skills                                                           */}
+        {/* ---------------------------------------------------------------- */}
+        <Section id="skills" title="Skills">
+          <div className="space-y-4">
+            {skills.map((category) => (
+              <div key={category.label}>
+                <h3 className="text-sm font-medium text-neutral-700 mb-1.5">
+                  {category.label}
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {category.items.map((item) => (
+                    <span
+                      key={item}
+                      className="text-xs text-neutral-500 border border-neutral-200 rounded px-2 py-0.5"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </Section>
@@ -143,85 +165,28 @@ export default function Home() {
         </Section>
 
         {/* ---------------------------------------------------------------- */}
-        {/* Publications                                                     */}
+        {/* CTA                                                              */}
         {/* ---------------------------------------------------------------- */}
-        <Section id="publications" title="Publications">
-          <div className="space-y-4">
-            {publications.map((pub) => (
-              <div key={pub.url} className="flex items-start gap-3">
-                <FileText size={16} className="mt-0.5 text-neutral-400 flex-shrink-0" />
-                <div>
-                  <a
-                    href={pub.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-2 hover:decoration-neutral-900 transition-colors"
-                  >
-                    {pub.title}
-                  </a>
-                  <span className="text-xs text-neutral-500 ml-2">{pub.venue}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Section>
+        <section className="py-8 mt-4 border-t border-neutral-200">
+          <div className="text-center">
+            <h2 className="font-serif text-2xl font-bold text-neutral-900">
+              Let&apos;s work together.
+            </h2>
 
-        {/* ---------------------------------------------------------------- */}
-        {/* Projects                                                         */}
-        {/* ---------------------------------------------------------------- */}
-        <Section id="projects" title="Projects">
-          <div>
-            {projects.map((p, i) => (
-              <ProjectCard key={i} project={p} />
-            ))}
+            <a
+              href={`mailto:${personal.email}`}
+              className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 bg-neutral-900 text-white text-sm font-medium rounded-lg hover:bg-neutral-800 transition-colors"
+            >
+              Get in touch
+              <ArrowRight size={15} />
+            </a>
           </div>
-        </Section>
-
-        {/* ---------------------------------------------------------------- */}
-        {/* Skills                                                           */}
-        {/* ---------------------------------------------------------------- */}
-        <Section id="skills" title="Skills">
-          <div className="space-y-4">
-            {skills.map((category) => (
-              <div key={category.label}>
-                <h3 className="text-sm font-medium text-neutral-700 mb-1.5">
-                  {category.label}
-                </h3>
-                <div className="flex flex-wrap gap-1.5">
-                  {category.items.map((item) => (
-                    <span
-                      key={item}
-                      className="text-xs text-neutral-500 border border-neutral-200 rounded px-2 py-0.5"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        {/* ---------------------------------------------------------------- */}
-        {/* Extra-curriculars                                                */}
-        {/* ---------------------------------------------------------------- */}
-        <Section id="extracurriculars" title="Extra-curriculars">
-          <ul className="space-y-2">
-            {extracurriculars.map((item) => (
-              <li
-                key={item}
-                className="text-sm text-neutral-600 pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.55em] before:w-1.5 before:h-px before:bg-neutral-400"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </Section>
+        </section>
 
         {/* ---------------------------------------------------------------- */}
         {/* Footer                                                           */}
         {/* ---------------------------------------------------------------- */}
-        <footer className="pt-6 pb-4 border-t border-neutral-200">
+        <footer className="pt-4 pb-4 border-t border-neutral-200">
           <p className="text-xs text-neutral-400 text-center">
             {personal.name} &middot; {personal.location}
           </p>

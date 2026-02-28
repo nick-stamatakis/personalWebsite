@@ -14,16 +14,14 @@ export interface Experience {
   descriptions: string[];
   logo?: string;
   link?: string;
-  isResearch?: boolean;
+  linkLabel?: string;
   publicationLink?: string;
-}
-
-export interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
-  link: string;
-  isExternal?: boolean; // true = not a GitHub repo
+  publicationTitle?: string;
+  publicationVenue?: string;
+  /** One-line impact statement shown above bullets for featured roles */
+  headline?: string;
+  /** Tech tags shown below bullets for featured roles */
+  technologies?: string[];
 }
 
 export interface SkillCategory {
@@ -37,13 +35,14 @@ export interface SkillCategory {
 
 export const personal = {
   name: "Nicholas Stamatakis",
-  email: "nicholas.stamatakis@stonybrook.edu",
+  email: "nicholas.nicos.stamatakis@gmail.com",
   phone: "(631) 809-0111",
   location: "Deer Park, NY",
   github: "https://github.com/nick-stamatakis",
   linkedin: "https://linkedin.com/in/nicholas-stamatakis",
   headshot: asset("/nick-headshot.jpg"),
-  bio: `Senior at Stony Brook University Honors College studying Computer Science and Applied Mathematics & Statistics. Experience building scalable systems at Amazon, AI/ML tools at Zebra Technologies, and full-stack products at West Palm Test Prep. Published researcher in adversarial machine learning.`,
+  headline: "Full-stack engineer who ships products people use.",
+  bio: `Built an AI tutoring platform serving 75,000+ users. Designed serverless data pipelines at Amazon. Published researcher in adversarial machine learning. CS & Applied Math at Stony Brook University.`,
 };
 
 // ---------------------------------------------------------------------------
@@ -65,73 +64,81 @@ export const education = {
 };
 
 // ---------------------------------------------------------------------------
-// Work experience (ordered most recent first)
+// Work — ordered most recent first, featured roles get headline + tech tags
 // ---------------------------------------------------------------------------
 
 export const experiences: Experience[] = [
   {
     title: "Software Development Engineer Intern",
-    company: "Amazon.com, Inc.",
+    company: "Amazon",
     location: "New York, NY",
-    date: "May 2025 \u2013 August 2025",
+    date: "May 2025 – Aug 2025",
     logo: asset("/Amazon_logo.svg"),
+    headline: "Serverless data pipeline expanding coverage 27× with 95% ML accuracy.",
     descriptions: [
-      "Designed a serverless web-scraping pipeline with Scrapy on AWS Lambda, expanding coverage by ~27\u00d7.",
-      "Integrated Claude 3.7 Sonnet via AWS Bedrock for NLP, yielding 95.35% accuracy on backtested datasets.",
-      "Automated infrastructure deployment with AWS CDK, managing 100K+ JSON files in S3.",
-      "Orchestrated a Step Function state machine with integration tests to validate the end-to-end CI/CD pipeline.",
-      "Instrumented 10+ CloudWatch dashboards, monitoring program health and error metrics.",
+      "Designed a serverless web-scraping pipeline with Scrapy on AWS Lambda, expanding data coverage by ~27×.",
+      "Integrated Claude 3.7 Sonnet via AWS Bedrock for NLP, achieving 95.35% accuracy on backtested datasets.",
+      "Automated infrastructure with AWS CDK, managing 100K+ JSON files in S3.",
+      "Orchestrated Step Function state machines with integration tests for end-to-end CI/CD.",
+      "Instrumented 10+ CloudWatch dashboards monitoring program health and error metrics.",
     ],
+    technologies: ["AWS Lambda", "AWS CDK", "Scrapy", "AWS Bedrock", "S3", "Step Functions", "CloudWatch"],
   },
   {
     title: "Software Engineer Intern",
     company: "West Palm Test Prep",
     location: "West Palm Beach, FL",
-    date: "October 2023 \u2013 April 2025",
+    date: "Oct 2023 – Apr 2025",
     logo: asset("/whiz-logo.png"),
     link: "https://www.whiz.study",
+    linkLabel: "whiz.study",
+    headline: "AI exam prep platform with 75,000+ users.",
     descriptions: [
-      "Launched a full-stack exam prep platform whiz.study with 50,000+ users using Next.js/Vercel.",
-      "Devised an AI tutor using WebSockets for real-time image processing, integrating OpenAI\u2019s API for intelligent feedback and automated text highlighting\u2014boosting student accuracy by 40%.",
-      "Built modern UI with TypeScript, Tailwind, and shadcn/ui, raising user satisfaction 75%.",
-      "Refactored a 350-parameter PostgreSQL schema using Prisma ORM; integrated with Supabase production DB.",
+      "Launched whiz.study end-to-end with Next.js, TypeScript, and Tailwind CSS on Vercel.",
+      "Designed an AI tutor using WebSockets for real-time image processing with OpenAI's API, boosting student accuracy by 40%.",
+      "Architected a 350-parameter PostgreSQL schema with Prisma ORM on Supabase.",
+      "Raised user satisfaction 75% through modern UI design with shadcn/ui.",
     ],
+    technologies: ["TypeScript", "Next.js", "Tailwind CSS", "OpenAI API", "WebSockets", "PostgreSQL", "Prisma", "Supabase"],
   },
   {
     title: "Software Engineer Intern",
     company: "Zebra Technologies",
     location: "Holtsville, NY",
-    date: "May 2024 \u2013 August 2024",
+    date: "May 2024 – Aug 2024",
     logo: asset("/zebra-technologies-logo.svg"),
     descriptions: [
-      "Engineered sentiment analysis system using Large Language Models, processing 200+ monthly feedback entries.",
-      "Implemented semantic search over 8K+ JIRA tickets using Retrieval-Augmented Generation (RAG).",
-      "Optimized a Qdrant Vector DB for efficient storage of System Problem Reports; reduced data retrieval time by 70% and enhanced report generation for 20,000 performance entries.",
+      "Engineered sentiment analysis system with LLMs, processing 200+ monthly feedback entries.",
+      "Implemented semantic search over 8K+ JIRA tickets using RAG.",
+      "Optimized Qdrant Vector DB, reducing data retrieval time 70% across 20K entries.",
     ],
+  },
+  {
+    title: "Adversarial ML Researcher",
+    company: "University of Connecticut",
+    location: "Storrs, CT",
+    date: "May 2023 – Oct 2023",
+    logo: asset("/uconn.jpg"),
+    publicationLink: "https://arxiv.org/abs/2506.14582",
+    publicationTitle: "Busting the Ballot with Commodity Printers: Voting Meets Adversarial Machine Learning",
+    publicationVenue: "ACM CCS '25",
+    headline: "Published research: auditing 10,000 ballots with 99.5% accuracy.",
+    descriptions: [
+      "Designed a support vector machine to audit ballots for Connecticut state elections with 99.5% validation accuracy.",
+      "Implemented adversarial attacks reaching 98% detection rate for adversarial examples.",
+      "Built image registration software with OpenCV, aligning 10,000 printed/scanned ballots and reducing manual verification by 85%.",
+    ],
+    technologies: ["Python", "PyTorch", "TensorFlow", "OpenCV", "HuggingFace"],
   },
   {
     title: "Data Structures & Algorithms Teaching Assistant",
     company: "Stony Brook University",
     location: "Stony Brook, NY",
-    date: "August 2023 \u2013 May 2024",
+    date: "Aug 2023 – May 2024",
     logo: asset("/sbu.jpg"),
     descriptions: [
       "Created 50+ practice problems, led exam reviews, and proctored for 200+ students.",
       "Led weekly 1-hour recitations, boosting comprehension and engagement.",
-    ],
-  },
-  {
-    title: "Adversarial Machine Learning Researcher",
-    company: "University of Connecticut",
-    location: "Storrs, CT",
-    date: "May 2023 \u2013 October 2023",
-    logo: asset("/uconn.jpg"),
-    isResearch: true,
-    publicationLink: "https://arxiv.org/abs/2506.14582",
-    descriptions: [
-      "Designed a support vector machine to audit 10,000 ballots for the state of Connecticut, achieving 99.5% validation accuracy.",
-      "Implemented adversarial machine learning techniques to perform attacks on the model, reaching a detection rate of 98% for adversarial examples.",
-      "Constructed advanced image registration software using Python and OpenCV; aligned 10,000 printed and scanned ballots, improving accuracy and reducing manual verification time by 85%.",
     ],
   },
 ];
@@ -145,50 +152,7 @@ export const publications = [
     title:
       "Busting the Ballot with Commodity Printers: Voting Meets Adversarial Machine Learning",
     url: "https://arxiv.org/abs/2506.14582",
-    venue: "arXiv",
-  },
-];
-
-// ---------------------------------------------------------------------------
-// Projects
-// ---------------------------------------------------------------------------
-
-export const projects: Project[] = [
-  {
-    title: "AI-Powered SAT Prep Platform",
-    description:
-      "Full-stack exam preparation platform with AI tutoring, real-time feedback, and automated text highlighting. Serves 50,000+ users.",
-    technologies: [
-      "TypeScript",
-      "Next.js",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "OpenAI API",
-      "WebSockets",
-    ],
-    link: "https://www.whiz.study",
-    isExternal: true,
-  },
-  {
-    title: "Fake Stack Overflow",
-    description:
-      "Complete replica of StackOverflow with user authentication, question posting, voting system, and search. Full CRUD operations and responsive design.",
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB"],
-    link: "https://github.com/nick-stamatakis/Fake-Stack-Overflow",
-  },
-  {
-    title: "Adversarial ML in Voting Systems",
-    description:
-      "Research project using CNNs to audit voting ballots for Connecticut state elections. Adversarial attacks and defenses with 99.5% validation accuracy.",
-    technologies: ["Python", "PyTorch", "TensorFlow", "HuggingFace", "OpenCV"],
-    link: "https://github.com/nick-stamatakis/Adversarial-Machine-Learning-in-Voting-Systems",
-  },
-  {
-    title: "Google PageRank Implementation",
-    description:
-      "PageRank algorithm implementation with a Java Swing GUI for tabular views of ranked web pages. Includes data visualization and sorting.",
-    technologies: ["Java", "Swing", "Data Structures"],
-    link: "https://github.com/nick-stamatakis/DataStructures",
+    venue: "ACM CCS '25",
   },
 ];
 
@@ -242,26 +206,4 @@ export const skills: SkillCategory[] = [
       "Linear",
     ],
   },
-  {
-    label: "Soft Skills",
-    items: ["Leadership", "Communication", "Project Coordination"],
-  },
-  {
-    label: "Human Languages",
-    items: [
-      "English (native)",
-      "Greek (native)",
-      "Italian (conversational)",
-    ],
-  },
-];
-
-// ---------------------------------------------------------------------------
-// Extra-curricular
-// ---------------------------------------------------------------------------
-
-export const extracurriculars = [
-  "Chanter at Greek Orthodox Church",
-  "Active member of Greek & Cypriot Heritage Club",
-  "Captain of Intramural Basketball Team",
 ];

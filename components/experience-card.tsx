@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
+import { FileText } from "lucide-react";
 import type { Experience } from "@/lib/data";
 
 export function ExperienceCard({ experience }: { experience: Experience }) {
@@ -28,19 +28,21 @@ export function ExperienceCard({ experience }: { experience: Experience }) {
         </h3>
 
         <div className="flex items-center gap-2 mt-1">
-          {experience.link ? (
-            <a
-              href={experience.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-2 hover:decoration-neutral-900 transition-colors"
-            >
-              {experience.company}
-            </a>
-          ) : (
-            <span className="text-sm font-medium text-neutral-700">
-              {experience.company}
-            </span>
+          <span className="text-sm font-medium text-neutral-700">
+            {experience.company}
+          </span>
+          {experience.link && (
+            <>
+              <span className="text-neutral-300">/</span>
+              <a
+                href={experience.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-2 hover:decoration-neutral-900 transition-colors"
+              >
+                {experience.linkLabel || experience.company}
+              </a>
+            </>
           )}
           {experience.location && (
             <>
@@ -50,10 +52,11 @@ export function ExperienceCard({ experience }: { experience: Experience }) {
           )}
         </div>
 
-        {experience.isResearch && (
-          <span className="inline-block mt-2 text-xs font-medium tracking-wide uppercase text-neutral-500 border border-neutral-300 rounded px-2 py-0.5">
-            Published Research
-          </span>
+        {/* Headline for featured roles */}
+        {experience.headline && (
+          <p className="mt-2 text-sm font-medium text-neutral-700">
+            {experience.headline}
+          </p>
         )}
 
         <ul className="mt-2.5 space-y-1.5">
@@ -65,15 +68,38 @@ export function ExperienceCard({ experience }: { experience: Experience }) {
         </ul>
 
         {experience.publicationLink && (
-          <a
-            href={experience.publicationLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-2 hover:decoration-neutral-900 transition-colors"
-          >
-            View publication on arXiv
-            <ExternalLink size={13} />
-          </a>
+          <div className="mt-3 flex items-start gap-2">
+            <FileText size={15} className="mt-0.5 text-neutral-400 flex-shrink-0" />
+            <div>
+              <a
+                href={experience.publicationLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-2 hover:decoration-neutral-900 transition-colors"
+              >
+                {experience.publicationTitle || "View publication"}
+              </a>
+              {experience.publicationVenue && (
+                <span className="text-xs text-neutral-500 ml-2">
+                  {experience.publicationVenue}
+                </span>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Tech tags for featured roles */}
+        {experience.technologies && experience.technologies.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-3">
+            {experience.technologies.map((tech) => (
+              <span
+                key={tech}
+                className="text-xs text-neutral-500 border border-neutral-200 rounded px-2 py-0.5"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         )}
       </div>
     </article>
