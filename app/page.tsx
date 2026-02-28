@@ -214,9 +214,34 @@ export default function Home() {
         {/* Footer                                                           */}
         {/* ---------------------------------------------------------------- */}
         <footer className="pt-4 pb-4 border-t border-neutral-200">
-          <p className="text-xs text-neutral-400 text-center">
-            {personal.name} &middot; {personal.location}
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-neutral-400">
+            <span>{personal.name}</span>
+            <span>&middot;</span>
+            <a
+              href={`mailto:${personal.email}`}
+              className="hover:text-neutral-600 transition-colors"
+            >
+              {personal.email}
+            </a>
+            <span>&middot;</span>
+            <a
+              href={personal.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-neutral-600 transition-colors"
+            >
+              GitHub
+            </a>
+            <span>&middot;</span>
+            <a
+              href={personal.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-neutral-600 transition-colors"
+            >
+              LinkedIn
+            </a>
+          </div>
         </footer>
       </div>
     </div>
